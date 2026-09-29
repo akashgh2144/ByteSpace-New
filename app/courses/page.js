@@ -16,7 +16,8 @@ function Logo() {
 }
 
 function CourseCard({ course }) {
-  return <article className="course-card"><div className="thumb"><img src={`/assets/${course[1]}`} alt="" /><span className="lesson">17 Lessons　 2 hours 16 mins</span></div><div className="course-body"><div className="course-title"><strong>{course[0]}</strong><span>4.5 ★</span></div><small>by <em>{course[2]}</em></small><div className="avatars"><span>●</span><span>●</span><span>●</span><span>●</span><b>2k+</b></div><div className="price">$25 <small>/ lifetime</small></div></div></article>;
+  const slug = course[0].toLowerCase().replaceAll(" ", "-");
+  return <Link className="course-card" href={`/courses/${slug}`}><div className="thumb"><img src={`/assets/frame/${course[1]}`} alt="" /><span className="lesson">17 Lessons　 2 hours 16 mins</span></div><div className="course-body"><div className="course-title"><strong>{course[0]}</strong><span>4.5 ★</span></div><small>by <em>{course[2]}</em></small><div className="avatars"><span>●</span><span>●</span><span>●</span><span>●</span><b>2k+</b></div><div className="price">$25 <small>/ lifetime</small></div></div></Link>;
 }
 
 export default function CoursesPage() {
