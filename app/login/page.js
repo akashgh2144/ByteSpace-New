@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function LoginPage() {
-  return <main className="auth-page"><section className="auth-art login-art"><Link className="auth-mark" href="/">▶</Link><div className="auth-art-copy"><strong>Sign in with ease</strong><p>Experience a seamless and efficient sign-in process that grants you quick access to a world of knowledge.</p></div></section><AuthForm mode="login" /></main>;
+  return <main className="auth-page"><section className="auth-art login-art"><Link className="auth-mark" href="/"><img src="/assets/home/mainlogo.png" alt="ByteSpace" /></Link><div className="auth-art-copy"><strong>Sign in with ease</strong><p>Experience a seamless and efficient sign-in process that grants you quick access to a world of knowledge.</p></div></section><AuthForm mode="login" /></main>;
 }
 
 function AuthForm({ mode }) {

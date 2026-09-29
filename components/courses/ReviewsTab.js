@@ -1,0 +1,5 @@
+const reviews = [["PurePearl Studio", "This course provided a truly comprehensive understanding of digital asset creation."], ["Albert Flores", "The lessons are well structured and easy to follow."], ["Cody Fisher", "A practical course with useful techniques and examples."]];
+
+export default function ReviewsTab() {
+  return <><h2>What Learners are Saying</h2><p>See what students think about their learning experience with this course.</p><div className="rating-summary"><strong>4.7</strong><div><b>★★★★★</b><span>★★★★★　 172 reviews</span></div></div><div className="review-filters"><button className="active">All ratings</button><button>5 ★</button><button>4 ★</button><button>3 ★</button><button>2 ★</button><button>1 ★</button></div><div className="review-list">{reviews.map(([name, text]) => <article key={name}><div><b>{name}</b><small>Course Learner</small></div><span>★★★★★ <em>2 years ago</em></span><p>{text}</p></article>)}</div></>;
+}

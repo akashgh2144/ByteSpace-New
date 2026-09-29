@@ -1,0 +1,5 @@
+const lessons = ["Introduction to Digital Assets", "Design Principles for Impact", "Advanced Techniques in Digital Creation", "Project Showcase and Critique", "Optimizing for Various Platforms", "Digital Asset Management Best Practices", "Monetization Strategies", "Capstone Project: Building Your Portfolio"];
+
+export default function LessonsTab() {
+  return <><h2>Explore the Modules</h2><p>Immerse yourself in a structured learning path with each module designed to build practical skills and confidence.</p><div className="lesson-list">{lessons.map((lesson, index) => <div className="lesson-row" key={lesson}><b>▣</b><span><strong>Module {index + 1}: {lesson}</strong><small>Learn practical techniques and workflows through guided lessons and examples.</small></span><em>{index === 0 ? "12 mins" : "21 mins"}</em></div>)}</div><h2>Lesson Content</h2><p>Engage with lessons that combine clear explanations, demonstrations and hands-on exercises.</p><div className="progress-box"><span>Learning Progress</span><strong>55%</strong><i /></div></>;
+}

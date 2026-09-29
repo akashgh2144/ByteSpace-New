@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function SignupPage() {
-  return <main className="auth-page"><section className="auth-art signup-art"><Link className="auth-mark" href="/">▶</Link><div className="auth-art-copy"><strong>Sign up and come in</strong><p>The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost.</p></div></section><SignupForm /></main>;
+  return <main className="auth-page"><section className="auth-art signup-art"><Link className="auth-mark" href="/"><img src="/assets/home/mainlogo.png" alt="ByteSpace" /></Link><div className="auth-art-copy"><strong>Sign up and come in</strong><p>The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost.</p></div></section><SignupForm /></main>;
 }
 
 function SignupForm() {

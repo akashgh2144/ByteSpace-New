@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const previewImages = ["image1.png", "image2.png", "image3.png", "image4.png"];
+import AboutTab from "../../../components/courses/AboutTab";
+import LessonsTab from "../../../components/courses/LessonsTab";
+import ReviewsTab from "../../../components/courses/ReviewsTab";
 
 function Logo() {
-  return <Link className="logo" href="/"> <b>▶</b> ByteSpace</Link>;
+  return <Link className="logo" href="/"><img src="/assets/home/mainlogo.png" alt="" /><strong>ByteSpace</strong></Link>;
 }
 
 function Footer() {
@@ -29,19 +30,14 @@ export default function CourseDetailsPage() {
 }
 
 function AboutContent() {
-  return <><h2>Description</h2><p>Embark on an enlightening exploration into the world of digital creation with our comprehensive course, “Build Digital Assets: A Comprehensive Guide.” This transformative learning experience invites you to delve deep into the intricacies of crafting impactful digital content.</p><p>In the initial modules, you&apos;ll establish a solid foundation by immersing yourself in the foundational concepts that form the backbone of digital asset creation. Understand the fundamental elements that constitute compelling digital content and gain proficiency in leveraging these elements to communicate effectively in the digital realm.</p><p>As you progress through the course, you&apos;ll ascend to higher levels of expertise, delving into the nuances of design principles that drive impactful creations.</p><PreviewAndPoints /></>;
+  return <AboutTab />;
 }
 
 function LessonsContent() {
-  const lessons = ["Introduction to Digital Assets", "Design Principles for Impact", "Advanced Techniques in Digital Creation", "Project Showcase and Critique", "Optimizing for Various Platforms", "Digital Asset Management Best Practices", "Monetization Strategies", "Capstone Project: Building Your Portfolio"];
-  return <><h2>Explore the Modules</h2><p>Immerse yourself in a structured learning path with each module designed to build practical skills and confidence.</p><div className="lesson-list">{lessons.map((lesson, index) => <div className="lesson-row" key={lesson}><b>▣</b><span><strong>Module {index + 1}: {lesson}</strong><small>Learn practical techniques and workflows through guided lessons and examples.</small></span><em>{index === 0 ? "12 mins" : "21 mins"}</em></div>)}</div><h2>Lesson Content</h2><p>Engage with lessons that combine clear explanations, demonstrations and hands-on exercises.</p><div className="progress-box"><span>Learning Progress</span><strong>55%</strong><i /></div></>;
+  return <LessonsTab />;
 }
 
 function ReviewsContent() {
-  const reviews = [["PurePearl Studio", "This course provided a truly comprehensive understanding of digital asset creation."], ["Albert Flores", "The lessons are well structured and easy to follow."], ["Cody Fisher", "A practical course with useful techniques and examples."]];
-  return <><h2>What Learners are Saying</h2><p>See what students think about their learning experience with this course.</p><div className="rating-summary"><strong>4.7</strong><div><b>★★★★★</b><span>★★★★★　 172 reviews</span></div></div><div className="review-filters"><button className="active">All ratings</button><button>5 ★</button><button>4 ★</button><button>3 ★</button><button>2 ★</button><button>1 ★</button></div><div className="review-list">{reviews.map(([name, text]) => <article key={name}><div><b>{name}</b><small>Course Learner</small></div><span>★★★★★ <em>2 years ago</em></span><p>{text}</p></article>)}</div></>;
+  return <ReviewsTab />;
 }
 
-function PreviewAndPoints() {
-  return <><h2>Sneak Peek</h2><div className="sneak-peek">{previewImages.map((image) => <img key={image} src={`/assets/${image}`} alt="Course preview" />)}</div><h2>Key Points</h2><ul className="key-points"><li>Foundational Concepts</li><li>Design Principles Mastery</li><li>Advanced Techniques in Digital Creation</li><li>Project Showcase and Critique</li><li>Optimizing for Various Platforms</li><li>Digital Asset Management Best Practices</li><li>Monetization Strategies</li><li>Capstone Project: Building Your Portfolio</li></ul></>;
-}
