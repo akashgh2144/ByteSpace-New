@@ -1,8 +1,8 @@
 "use client";
 import { BsCardHeading, BsPersonVcard } from "react-icons/bs";
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Navbar from "../../../components/common/Navbar";
 import AboutTab from "../../../components/courses/AboutTab";
 import LessonsTab from "../../../components/courses/LessonsTab";
 import ReviewsTab from "../../../components/courses/ReviewsTab";
@@ -15,15 +15,6 @@ import {
   FiUsers,
   FiVideo,
 } from "react-icons/fi";
-
-function Logo() {
-  return (
-    <Link className="logo" href="/">
-      <Image src="/assets/home/mainlogo.png" alt="" width={36} height={36} />
-      <strong>ByteSpace</strong>
-    </Link>
-  );
-}
 
 export default function CourseDetailsPage() {
   const [activeTab, updateTab] = useState("about");
@@ -41,19 +32,7 @@ export default function CourseDetailsPage() {
   return (
     <main className="details-page">
       <section className="details-hero">
-        <nav>
-          <Logo />
-          <div className="nav-links">
-            <Link href="/">Home</Link>
-            <Link href="/courses">Courses</Link>
-            <Link href="/#paths">Creators</Link>
-          </div>
-          <div className="account">
-            <Link href="/login">Sign In</Link>
-            <Link href="/join-us">Join Us</Link>
-            <span>▢</span>
-          </div>
-        </nav>
+        <Navbar />
         <div className="details-heading">
           <span>Build Digital Asset: A Comprehensive Guide</span>
           <p className="text-[16px] font-[400] mt-4">
@@ -125,7 +104,7 @@ export default function CourseDetailsPage() {
               Advanced Techniques in Digital Creation <b>16 mins</b>
             </li>
           </ol>
-          <p className="text-[12px]">99 more videos</p>
+          <p className="text-[14px]">99 more videos</p>
           <p>
             Ready to Dive In? Enroll Now and Start Building Your Digital Future!
           </p>

@@ -3,7 +3,7 @@ import reviewImage1 from "../../Assets/review/review.png";
 import reviewImage2 from "../../Assets/review/review2.png";
 import reviewImage3 from "../../Assets/review/review3.png";
 import reviewImage4 from "../../Assets/review/review4.png";
-
+import { FaStar } from "react-icons/fa";
 const ratingCounts = [720, 120, 21, 12, 16];
 const reviewImages = [reviewImage1, reviewImage2, reviewImage3, reviewImage4];
 
@@ -60,13 +60,14 @@ export default function ReviewsTab() {
       <div className="review-filters">
         {[
           ["All ratings", true],
-          ["5 ★"],
-          ["4 ★"],
-          ["3 ★"],
-          ["2 ★"],
-          ["1 ★"],
+          ["5", false],
+          ["4", false],
+          ["3", false],
+          ["2", false],
+          ["1", false],
         ].map(([label, active]) => (
           <button className={active ? "active" : ""} key={label}>
+            {label !== "All ratings" && <FaStar />}
             {label}
           </button>
         ))}
