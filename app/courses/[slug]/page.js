@@ -1,12 +1,20 @@
 "use client";
-
+import { BsCardHeading, BsPersonVcard } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import AboutTab from "../../../components/courses/AboutTab";
 import LessonsTab from "../../../components/courses/LessonsTab";
 import ReviewsTab from "../../../components/courses/ReviewsTab";
-import { FiBarChart2, FiShare2, FiStar, FiUsers } from "react-icons/fi";
+import Footer from "../../../components/common/Footer";
+import {
+  FiBarChart2,
+  FiPlay,
+  FiShare2,
+  FiStar,
+  FiUsers,
+  FiVideo,
+} from "react-icons/fi";
 
 function Logo() {
   return (
@@ -14,59 +22,6 @@ function Logo() {
       <Image src="/assets/home/mainlogo.png" alt="" width={36} height={36} />
       <strong>ByteSpace</strong>
     </Link>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="site-footer">
-      <div className="footer-main">
-        <div className="footer-brand">
-          <Link className="footer-logo" href="/">
-            <b>▶</b> ByteSpace
-          </Link>
-          <p>
-            Stay up to date with our latest features and releases by joining our
-            newsletter.
-          </p>
-          <div className="newsletter">
-            <input placeholder="Enter your email" />
-            <button>Search</button>
-          </div>
-          <small>
-            By subscribing, you agree to our Privacy Policy and consent to
-            receive updates from our company.
-          </small>
-        </div>
-        <div className="footer-links">
-          <div>
-            <Link href="/courses">Featured Courses</Link>
-            <Link href="/courses">Featured Categories</Link>
-            <Link href="/courses">Business</Link>
-            <Link href="/courses">IT</Link>
-            <Link href="/courses">Design</Link>
-          </div>
-          <div>
-            <Link href="/courses">Development</Link>
-            <Link href="/courses">Marketing</Link>
-            <Link href="/courses">Photography</Link>
-            <Link href="/courses">Finance</Link>
-            <Link href="/courses">Sport</Link>
-          </div>
-          <div>
-            <Link href="#">Become a Creator</Link>
-            <Link href="#">Affiliate Program</Link>
-            <Link href="#">Contact</Link>
-            <Link href="#">Help</Link>
-            <Link href="#">About</Link>
-          </div>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <span>© 2023 ByteSpace. All rights reserved.</span>
-        <span>Privacy Policy　 Terms of Service　 Cookies Settings</span>
-      </div>
-    </footer>
   );
 }
 
@@ -95,7 +50,7 @@ export default function CourseDetailsPage() {
           </div>
           <div className="account">
             <Link href="/login">Sign In</Link>
-            <Link href="/signup">Join Us</Link>
+            <Link href="/join-us">Join Us</Link>
             <span>▢</span>
           </div>
         </nav>
@@ -129,7 +84,11 @@ export default function CourseDetailsPage() {
             width={582}
             height={388}
           />
-          <button className="play-button">▶</button>
+          <button className="play-button" aria-label="Play course preview">
+            <span>
+              <FiPlay size={24} fill="currentColor" />
+            </span>
+          </button>
         </div>
       </section>
       <section className="details-content">
@@ -166,20 +125,28 @@ export default function CourseDetailsPage() {
               Advanced Techniques in Digital Creation <b>16 mins</b>
             </li>
           </ol>
-          <small>99 more videos</small>
+          <p className="text-[12px]">99 more videos</p>
           <p>
             Ready to Dive In? Enroll Now and Start Building Your Digital Future!
           </p>
           <strong className="detail-price">
             $25<small>/lifetime</small>
           </strong>
-          <button className="enroll-button">Enroll Now</button>
+          <button className="enroll-button ">Enroll Now</button>
           <h3>This course include</h3>
           <ul>
-            <li>Learning Resources</li>
-            <li>Quality Lesson Videos</li>
-            <li>Certificate of Completion</li>
-            <li>Private Consultation</li>
+            <li>
+              <BsCardHeading /> Learning Resources
+            </li>
+            <li>
+              <FiVideo /> Quality Lesson Videos
+            </li>
+            <li>
+              <BsPersonVcard /> Certificate of Completion
+            </li>
+            <li>
+              <FiUsers /> Private Consultation
+            </li>
           </ul>
           <hr />
           <b>PurePearl Studio</b>

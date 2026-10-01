@@ -11,11 +11,11 @@ export default function Navbar() {
       <div className="nav-links">
         <Link href="/">Home</Link>
         <Link href="/courses">Courses</Link>
-        <Link href="/#paths">Creators</Link>
+        <Link href="/creators">Creators</Link>
       </div>
       <div className="account">
         <Link href="/login">Sign In</Link>
-        <Link href="/signup">Join Us</Link>
+        <Link href="/join-us">Join Us</Link>
         <LiaShoppingBagSolid aria-label="Shopping bag" />
       </div>
     </nav>

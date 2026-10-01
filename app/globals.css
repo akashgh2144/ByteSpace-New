@@ -52,7 +52,9 @@
 
   .hero nav,
   .course-hero nav,
-  .details-hero nav {
+  .details-hero nav,
+  .creator-hero nav,
+  .not-found-hero nav {
     @apply relative z-20 mx-auto flex h-[120px] max-w-[1310px] items-center gap-8 border-b border-white/15 px-0;
   }
 
@@ -201,6 +203,82 @@
     @apply mt-7 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3;
   }
 
+  .creator-hero {
+    @apply relative min-h-[420px] overflow-hidden bg-brand text-white;
+    background-image: linear-gradient(#ffffff18 1px, transparent 1px), linear-gradient(90deg, #ffffff18 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+
+  .creator-profile,
+  .creator-copy,
+  .creator-stats {
+    @apply relative z-10 mx-auto max-w-[860px];
+    width: calc(100% - 60px);
+  }
+
+  .creator-profile {
+    @apply flex items-center gap-4 pt-10;
+  }
+
+  .creator-avatar {
+    @apply rounded-xl object-cover;
+  }
+
+  .creator-name {
+    @apply flex items-center gap-3;
+  }
+
+  .creator-name h1 {
+    @apply m-0 font-display text-2xl font-semibold;
+  }
+
+  .creator-name span,
+  .creator-follow {
+    @apply rounded-full bg-lime px-6 py-3 text-[10px] text-lime-950;
+  }
+
+  .creator-profile small,
+  .creator-copy {
+    @apply text-[10px] text-blue-100;
+  }
+
+  .creator-copy {
+    @apply mt-5 leading-5;
+  }
+
+  .creator-copy p {
+    @apply m-0 max-w-[760px];
+  }
+
+  .creator-stats {
+    @apply flex gap-2 pb-9 pt-7;
+  }
+
+  .creator-stats span {
+    @apply rounded-full bg-white px-5 py-3 text-[10px] text-slate-700;
+  }
+
+  .creator-stats b {
+    @apply mr-1 text-blue-600;
+  }
+
+  .creator-follow {
+    @apply absolute bottom-9 border-0 font-medium;
+    right: max(8vw, 30px);
+  }
+
+  .creator-toolbar {
+    @apply mb-5 flex items-center justify-between;
+  }
+
+  .creator-toolbar div {
+    @apply flex gap-2;
+  }
+
+  .creator-toolbar button {
+    @apply flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] text-slate-600;
+  }
+
   .course-card {
     @apply overflow-hidden rounded-2xl border border-slate-200 bg-white;
   }
@@ -269,11 +347,11 @@
   }
 
   .avatars img {
-    @apply -mr-1.5 h-6 w-6 rounded-full border-2 border-white object-cover;
+    @apply -mr-1.5 h-7 w-7 rounded-full border-2 border-white object-cover;
   }
 
   .avatars b {
-    @apply relative z-10 ml-1 grid h-6 w-6 place-items-center rounded-full bg-lime text-[7px] text-lime-950;
+    @apply relative z-10 ml-1 grid h-7 w-7 place-items-center rounded-full bg-lime text-[8px] text-lime-950;
   }
 
   .price {
@@ -304,6 +382,47 @@
     @apply min-h-[568px] border-t border-slate-200 bg-white pb-5 pt-[78px] text-sm text-slate-700;
     padding-left: max(8vw, 30px);
     padding-right: max(8vw, 30px);
+  }
+
+  .not-found-hero {
+    @apply min-h-[680px] overflow-hidden bg-brand text-white;
+    background-image: linear-gradient(#ffffff18 1px, transparent 1px), linear-gradient(90deg, #ffffff18 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+
+  .not-found-content {
+    @apply mx-auto flex max-w-[760px] flex-col items-center px-6 text-center;
+  }
+
+  .not-found-content strong {
+    @apply mt-8 block bg-clip-text font-display text-[180px] font-bold leading-none text-transparent;
+    background-image: linear-gradient(180deg, #c4ff00 48%, #aebc9b 100%);
+  }
+
+  .not-found-content h1 {
+    @apply relative z-10 -mt-16 max-w-[650px] font-display text-4xl font-semibold leading-tight;
+  }
+
+  .not-found-content p {
+    @apply mt-4 text-xs text-blue-100;
+  }
+
+  .not-found-content a {
+    @apply mt-5 rounded-full bg-lime px-5 py-2 text-xs text-lime-950;
+  }
+
+  @media (max-width: 700px) {
+    .not-found-hero {
+      @apply min-h-[700px];
+    }
+
+    .not-found-content strong {
+      @apply mt-14 text-[120px];
+    }
+
+    .not-found-content h1 {
+      @apply -mt-10 text-3xl;
+    }
   }
 
   .footer-main {
@@ -365,19 +484,89 @@
   }
 
   .auth-art {
-    @apply relative min-h-[260px] border-b-[3px] border-blue-600 bg-cover bg-center lg:min-h-[calc(100vh-18px)] lg:border-b-0 lg:border-r-[3px];
+    @apply relative min-h-[260px] overflow-hidden border-b-[3px] border-blue-600 bg-brand lg:min-h-[calc(100vh-18px)] lg:border-b-0 lg:border-r-[3px];
+    background-image: linear-gradient(#ffffff18 1px, transparent 1px), linear-gradient(90deg, #ffffff18 1px, transparent 1px);
+    background-size: 64px 64px;
   }
 
   .auth-mark img {
     @apply h-8 w-8 object-contain;
   }
 
-  .login-art {
-    background-image: url('/assets/login_page/loginpage2.png');
+  .auth-mark {
+    @apply absolute left-50 top-5 z-10;
   }
 
-  .signup-art {
-    background-image: url('/assets/login_page/loginpage1.png');
+  .login-art {
+    @apply bg-brand;
+  }
+
+  .auth-art-copy {
+    @apply absolute left-50 top-20 z-10 max-w-[330px] text-white;
+  }
+
+  .auth-art-copy strong {
+    @apply text-base;
+  }
+
+  .auth-art-copy p {
+    @apply mt-3 text-[11px] leading-5 text-blue-100;
+  }
+
+  .auth-collage {
+    @apply absolute inset-0;
+  }
+
+  .auth-course,
+  .auth-students,
+  .auth-shape {
+    @apply absolute object-contain;
+  }
+
+  .auth-course {
+    @apply w-[380px] rounded-xl shadow-lg;
+  }
+
+  .auth-course-back {
+    left: 8%;
+    bottom: 20%;
+    width: 405px;
+    transform: rotate(-1deg) scale(.84);
+  }
+
+  .auth-course-front {
+    left: 21%;
+    bottom: 31%;
+    z-index: 2;
+  }
+
+  .auth-students {
+    left: 35%;
+    bottom: 16%;
+    z-index: 3;
+    width: 245px;
+  }
+
+  .auth-shape {
+    z-index: 4;
+  }
+
+  .auth-triangle {
+    bottom: 14%;
+    left: 10.5%;
+    width: 140px;
+  }
+
+  .auth-ring {
+    top: 30%;
+    left: 12%;
+    width: 150px;
+  }
+
+  .auth-ribbon {
+    right: 35%;
+    bottom: 23%;
+    width: 170px;
   }
 
   .auth-panel {
@@ -385,7 +574,7 @@
   }
 
   .auth-card {
-    @apply min-h-[410px] w-full max-w-[310px] rounded-xl bg-white p-8 text-slate-800 shadow-xl;
+    @apply min-h-[540px] w-full max-w-[420px] rounded-2xl bg-white p-11 text-slate-800 shadow-xl;
   }
 
   .auth-card h1 {
@@ -397,11 +586,11 @@
   }
 
   .auth-card label {
-    @apply flex flex-col gap-1 text-[8px];
+    @apply flex flex-col gap-2 text-[12px];
   }
 
   .auth-card input {
-    @apply h-[29px] rounded-md border border-slate-200 px-3 text-[9px] outline-0;
+    @apply h-12 rounded-md border border-slate-200 px-4 text-[12px] outline-0;
   }
 
   .auth-card form button,
@@ -418,7 +607,7 @@
   }
 
   .lesson-panel .enroll-button {
-    @apply block w-full self-auto py-3 text-sm;
+    @apply block w-full self-auto py-3 text-[12px] font-semibold;
   }
 
   .details-content {
@@ -763,7 +952,7 @@
     @apply h-4 w-4 shrink-0;
   }
 
-  .course-search > svg {
+  .course-search>svg {
     @apply pointer-events-none absolute left-4 z-10;
   }
 
@@ -885,7 +1074,16 @@
   }
 
   .play-button {
-    @apply absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full border-0 bg-white text-lg text-slate-400;
+    @apply absolute grid h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-xl border-0;
+    left: calc(47% + 28px);
+    top: calc(45% + 28px);
+    background: rgba(126, 96, 84, 0.98);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .play-button span {
+    @apply grid h-11 w-11 place-items-center rounded-full bg-white text-[#a98c80];
   }
 
   .lesson-panel h2 {
@@ -923,9 +1121,12 @@
     @apply m-0 list-none space-y-3 p-0;
   }
 
-  .lesson-panel>ul li::before {
-    content: '▣';
-    @apply mr-3 text-blue-600;
+  .lesson-panel>ul li {
+    @apply flex items-center gap-3;
+  }
+
+  .lesson-panel>ul li svg {
+    @apply shrink-0 text-blue-600;
   }
 
   .lesson-panel hr {
@@ -947,15 +1148,15 @@
   }
 
   .profile-button {
-    @apply mt-5 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm;
+    @apply mt-5 rounded-full border border-slate-300 bg-white px-4 py-2 text-[12px] text-slate-600;
   }
 
   .auth-kicker {
-    @apply text-[9px] text-blue-600;
+    @apply text-[12px] text-blue-600;
   }
 
   .auth-switch {
-    @apply mt-16 text-center text-[8px] text-slate-400;
+    @apply mt-16 text-center text-[12px] text-slate-400;
   }
 
   .auth-switch a {
@@ -974,62 +1175,97 @@
     @apply text-[9px] text-slate-400;
   }
 
+  .social-buttons {
+    @apply mt-8 flex justify-center gap-3;
+  }
+
+  .social-buttons button {
+    @apply grid h-12 w-12 place-items-center rounded-xl border border-slate-200 bg-white text-xl text-black;
+  }
+
   .lesson-list {
-    @apply my-5 flex flex-col gap-2;
+    @apply my-4 flex flex-col gap-4;
   }
 
   .lesson-row {
-    @apply grid grid-cols-[25px_1fr_auto] items-center gap-2 border-b border-slate-100 py-2 text-slate-500;
+    @apply grid grid-cols-[44px_1fr] items-start gap-2 text-slate-500;
   }
 
   .lesson-row>b {
-    @apply grid h-6 w-6 place-items-center rounded-full bg-lime text-[10px] text-lime-950;
+    @apply grid h-11 w-11 place-items-center rounded-xl bg-lime text-lg text-lime-950;
   }
 
   .lesson-row span {
-    @apply flex flex-col gap-1;
+    @apply flex flex-col gap-0.5;
   }
 
   .lesson-row strong {
-    @apply text-[9px] text-slate-700;
+    @apply text-[10px] font-medium text-slate-800;
   }
 
-  .lesson-row small,
-  .lesson-row em {
-    @apply text-[8px];
+  .lesson-row small {
+    @apply text-[10px] leading-5;
   }
 
-  .lesson-row em {
-    @apply text-blue-600 not-italic;
+  .lesson-row svg {
+    @apply h-5 w-5;
   }
 
   .progress-box,
   .rating-summary {
-    @apply rounded-lg border border-slate-200 p-3 text-[9px];
+    @apply rounded-xl border border-slate-200 p-3 text-[9px];
   }
 
   .progress-box strong {
-    @apply float-right text-blue-600;
+    @apply mt-1 block text-2xl leading-none text-slate-800;
   }
 
   .progress-box i {
-    @apply mt-2 block h-1 rounded bg-lime;
+    @apply mt-2 block h-1 rounded bg-slate-200;
+  }
+
+  .progress-box i b {
+    @apply block h-full w-[55%] rounded bg-lime;
   }
 
   .rating-summary {
-    @apply my-5 flex items-center gap-5;
+    @apply my-5 flex items-center gap-3 rounded-xl border border-slate-200 p-5;
   }
 
   .rating-summary>strong {
-    @apply rounded bg-lime px-3 py-4 text-lg text-lime-950;
+    @apply flex h-[74px] w-[68px] shrink-0 flex-col items-center justify-center rounded bg-lime text-[8px] font-normal text-lime-950;
   }
 
-  .rating-summary div {
-    @apply flex flex-col gap-2 text-blue-600;
+  .rating-summary>strong b {
+    @apply text-2xl font-semibold leading-7;
   }
 
-  .rating-summary span {
-    @apply text-[8px] text-slate-500;
+  .rating-bars {
+    @apply flex min-w-0 flex-1 flex-col gap-1;
+  }
+
+  .rating-bars>div {
+    @apply grid grid-cols-[1fr_64px_20px] items-center gap-2;
+  }
+
+  .rating-bars i {
+    @apply block h-1 rounded bg-slate-200;
+  }
+
+  .rating-bars i b {
+    @apply block h-full rounded bg-lime;
+  }
+
+  .rating-bars span {
+    @apply text-[13px] leading-none tracking-[1px] text-slate-600;
+  }
+
+  .rating-bars em {
+    @apply text-[8px] not-italic text-slate-500;
+  }
+
+  .reviews-heading {
+    @apply mb-3 mt-4 text-[13px] font-semibold;
   }
 
   .review-filters {
@@ -1037,7 +1273,7 @@
   }
 
   .review-filters button {
-    @apply rounded-full border border-slate-200 bg-white px-2 py-1 text-[8px] text-slate-500;
+    @apply rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] text-slate-500;
   }
 
   .review-filters .active {
@@ -1049,23 +1285,39 @@
   }
 
   .review-list article {
-    @apply rounded-lg border border-slate-200 p-3 text-slate-500;
+    @apply rounded-xl border border-slate-200 p-5 text-slate-500;
   }
 
-  .review-list article>div {
-    @apply flex flex-col gap-1;
+  .review-list article header {
+    @apply flex items-center gap-2;
   }
 
-  .review-list article>div b {
-    @apply text-[9px] text-slate-700;
+  .review-list article header img {
+    @apply h-7 w-7 rounded-full object-cover;
+  }
+
+  .review-list article header div {
+    @apply flex flex-col;
+  }
+
+  .review-list article header b {
+    @apply text-[9px] font-medium text-slate-700;
+  }
+
+  .review-list article header small {
+    @apply text-[8px];
+  }
+
+  .review-list article header em {
+    @apply ml-auto self-start text-[8px] not-italic;
   }
 
   .review-list article>span {
-    @apply my-2 block text-blue-600;
+    @apply my-3 block text-[14px] tracking-[2px] text-slate-600;
   }
 
   .review-list article p {
-    @apply text-[8px] leading-6;
+    @apply text-[9px] leading-5;
   }
 
   @media (max-width: 700px) {
@@ -1087,7 +1339,9 @@
 
     .hero nav,
     .course-hero nav,
-    .details-hero nav {
+    .details-hero nav,
+    .creator-hero nav,
+    .not-found-hero nav {
       @apply h-20 gap-3 px-5;
     }
 
