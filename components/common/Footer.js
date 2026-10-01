@@ -4,7 +4,7 @@ function Brand() {
   return (
     <Link className="home-brand" href="/">
       <img src="/assets/home/mainlogo.png" alt="" />
-      <strong>ByteSpace</strong>
+      <strong className="font-[600]">ByteSpace</strong>
     </Link>
   );
 }
