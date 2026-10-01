@@ -417,11 +417,13 @@
     }
 
     .not-found-content strong {
-      @apply mt-14 text-[120px];
+      margin-top: 24px;
+      font-size: 68px !important;
+      line-height: 0.95;
     }
 
     .not-found-content h1 {
-      @apply -mt-10 text-3xl;
+      @apply mt-2 text-3xl;
     }
   }
 
@@ -483,6 +485,14 @@
     background-size: 64px 64px;
   }
 
+  @media (max-width: 1023px) {
+    .auth-page {
+      min-height: 100dvh;
+      height: auto;
+      overflow-y: auto;
+    }
+  }
+
   .auth-art {
     @apply relative min-h-[260px] overflow-hidden border-b-[3px] border-blue-600 bg-brand lg:min-h-[calc(100vh-18px)] lg:border-b-0 lg:border-r-[3px];
     background-image: linear-gradient(#ffffff18 1px, transparent 1px), linear-gradient(90deg, #ffffff18 1px, transparent 1px);
@@ -514,7 +524,15 @@
   }
 
   .auth-collage {
-    @apply absolute inset-0;
+    @apply absolute inset-0 hidden lg:block;
+  }
+
+  @media (max-width: 1023px) {
+
+    .auth-mark,
+    .auth-art-copy {
+      left: 1.25rem;
+    }
   }
 
   .auth-course,
@@ -571,6 +589,12 @@
 
   .auth-panel {
     @apply grid place-items-center p-8;
+  }
+
+  @media (max-width: 1023px) {
+    .auth-panel {
+      padding-top: 0;
+    }
   }
 
   .auth-card {
@@ -1327,18 +1351,80 @@
   @media (max-width: 700px) {
     .details-hero {
       --details-left: 20px;
+      min-height: 0;
+      padding-bottom: 24px;
+    }
+
+    .details-heading {
+      margin-top: 24px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .details-heading>span {
+      font-size: 24px;
+    }
+
+    .detail-stats {
+      gap: 8px;
+    }
+
+    .detail-stats b {
+      padding: 8px 12px;
+      font-size: 11px;
+    }
+
+    .share-button {
+      right: 20px;
+      top: 84px;
+      padding: 9px 14px;
+      font-size: 11px;
     }
 
     .details-media {
-      @apply bottom-6 left-5 right-5 w-auto;
+      position: relative;
+      inset: auto;
+      width: auto;
+      height: auto;
+      aspect-ratio: 582 / 388;
+      margin: 28px 20px 0;
     }
 
     .details-content {
-      @apply block px-5;
+      position: relative;
+      left: auto;
+      display: block;
+      padding: 32px 20px;
+    }
+
+    .details-copy {
+      max-width: none;
     }
 
     .lesson-panel {
-      @apply mt-9;
+      top: auto;
+      left: auto;
+      width: calc(100% + 24px);
+      margin-top: 65px;
+      margin-left: -36px;
+      padding: 22px;
+    }
+
+    .sneak-peek {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sneak-peek img {
+      width: 100%;
+    }
+
+    .lesson-panel ol li {
+      grid-template-columns: 25px minmax(0, 1fr);
+    }
+
+    .lesson-panel ol li b {
+      grid-column: 2;
     }
 
     .hero nav,
@@ -1394,20 +1480,37 @@
       width: calc(100% - 40px);
     }
 
+    .hero>div[aria-hidden='true'],
+    .hero-art .float-card {
+      display: none;
+    }
+
     .hero-art>img {
-      @apply h-[360px] w-[380px];
-    }
-
-    .hero-art .progress {
-      @apply right-2 top-16 w-32;
-    }
-
-    .hero-art .students {
-      @apply bottom-8 left-2 w-36;
+      @apply h-[330px] w-[350px];
     }
 
     .lime-shape {
-      @apply inset-[72px_0_-165px];
+      @apply inset-[72px_0_-110px];
+    }
+
+    .partners {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      min-height: 150px;
+      height: auto;
+      gap: 22px 18px;
+      padding: 24px 20px;
+    }
+
+    .partners img {
+      justify-self: center;
+      width: auto;
+      max-width: 130px;
+      max-height: 38px;
+    }
+
+    .partners img:last-child {
+      grid-column: 1 / -1;
     }
 
     .course-list header,
